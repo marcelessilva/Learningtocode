@@ -3,6 +3,7 @@ package util;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.NumberFormat;
 
 public class Util {
 
@@ -37,5 +38,16 @@ public class Util {
             e.printStackTrace();
         }
         return 0;
+    }
+
+    /**
+     * Transformar número para Moeda com formatação local e decimal com vírgula
+     * @param number número que equivale ao valor em dinheiro
+     * @return número formatado para moeda local com decimal e vírgula
+     */
+    public static String formatCurrency(float number) {
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        String formatedcurrency = formatter.format(number);
+        return formatedcurrency;
     }
 }
