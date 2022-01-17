@@ -16,19 +16,26 @@ public class Funcao {
     public static final float INSS_ALIQUOTA_FAIXA_2 = 9 / 100f;
     public static final float INSS_ALIQUOTA_FAIXA_3 = 12 / 100f;
     public static final float INSS_ALIQUOTA_FAIXA_4 = 14 / 100f;
+    public static final float IR_MAX_FAIXA_1 = 1903.98f;
+    public static final float IR_MIN_FAIXA_2 = 1903.99f;
+    public static final float IR_MAX_FAIXA_2 = 2826.65f;
+    public static final float IR_MIN_FAIXA_3 = 2826.66f;
+    public static final float IR_MAX_FAIXA_3 = 3751.05f;
+    public static final float IR_MIN_FAIXA_4 = 3751.06f;
+    public static final float IR_MAX_FAIXA_4 = 4664.68f;
+    public static final float IR_ALIQUOTA_FAIXA_2 = 7.5f / 100f;
+    public static final float IR_ALIQUOTA_FAIXA_3 = 15f / 100f;
+    public static final float IR_ALIQUOTA_FAIXA_4 = 22.5f / 100f;
+    public static final float IR_ALIQUOTA_FAIXA_5 = 27.5f / 100f;
+    public static final float IR_DEDUCAO_FAIXA_2 = 142.80f;
+    public static final float IR_DEDUCAO_FAIXA_3 = 354.80f;
+    public static final float IR_DEDUCAO_FAIXA_4 = 636.13f;
+    public static final float IR_DEDUCAO_FAIXA_5 = 869.36f;
 
 
     public static void main(String[] args) {
 
-        //System.out.println(sum(2, 8));
-        //printHelloWorld();
-        //defineNumberPositiveNegative(10);
-        //defineNumberPositiveNegative(-25);
-        //defineNumberPositiveNegative(0);
 
-
-        float descontoINSS = calcularDescontoINSS(5000);
-        System.out.println(formatCurrency(descontoINSS));
 
     }
 
@@ -55,35 +62,35 @@ public class Funcao {
     }
 
 
-    static void calcularValorIR(float salario) {
+    static float determinarAliquota(float salarioBaseIR) {
 
-        float aliquota = 0;
-        float deducao = 0;
-
-        if (salario <= 1903.98) {
-            return;
-        } else if (salario >= 1903.99 && salario <= 2826.65) {
-            aliquota = 7.5f /100f;
-            deducao = 142.80f;
-
-        } else if (salario >= 2826.66 && salario <= 3751.05) {
-            aliquota = 15f /100f;
-            deducao = 354.80f;
-
-        } else if (salario >= 3751.06 && salario <= 4664.68) {
-            aliquota = 22.5f / 100f;
-            deducao = 636.13f;
+        if (salarioBaseIR <= IR_MAX_FAIXA_1) {
+            return 0;
+        } else if (salarioBaseIR >= IR_MIN_FAIXA_2 && salarioBaseIR <= IR_MAX_FAIXA_2) {
+            return IR_ALIQUOTA_FAIXA_2;
+        } else if (salarioBaseIR >= IR_MIN_FAIXA_3 && salarioBaseIR <= IR_MAX_FAIXA_3) {
+            return IR_ALIQUOTA_FAIXA_3;
+        } else if (salarioBaseIR >= IR_MIN_FAIXA_4 && salarioBaseIR <= IR_MAX_FAIXA_4) {
+            return IR_ALIQUOTA_FAIXA_4;
         } else {
-            aliquota = 27.5f /100f;
-            deducao = 869.36f;
+            return IR_ALIQUOTA_FAIXA_5;
         }
-        float valorDescontado = salario * aliquota - deducao;
-        float salarioLiquido = salario - valorDescontado;
-        System.out.println("Valor Descontado: " + formatCurrency(valorDescontado));
-        System.out.println("Salário Líquido " + formatCurrency(salarioLiquido));
-
-
     }
+
+    static float calcularDescontoIR(float salariobaseIR, float aliquota) {
+        if (aliquota == 0) {
+            return 0;
+        } else if (aliquota == IR_ALIQUOTA_FAIXA_2) {
+            return salariobaseIR * aliquota - IR_DEDUCAO_FAIXA_2;
+        } else if (aliquota == IR_ALIQUOTA_FAIXA_3) {
+            return salariobaseIR * aliquota - IR_DEDUCAO_FAIXA_3;
+        } else if (aliquota == IR_ALIQUOTA_FAIXA_4) {
+            return salariobaseIR * aliquota - IR_DEDUCAO_FAIXA_4;
+        } else {
+            return salariobaseIR * aliquota - IR_DEDUCAO_FAIXA_5;
+        }
+    }
+
 
     static float calcularDescontoINSS(float salario) {
         final float valorDescontoMaximoFaixa1 = SALARIO_MINIMO * INSS_ALIQUOTA_FAIXA_1;
