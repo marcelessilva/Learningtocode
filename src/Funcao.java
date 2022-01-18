@@ -1,4 +1,6 @@
-import static util.Util.formatCurrency;
+import com.sun.org.apache.bcel.internal.generic.ARETURN;
+
+import static util.Util.*;
 
 public class Funcao {
 
@@ -35,6 +37,27 @@ public class Funcao {
 
     public static void main(String[] args) {
 
+        System.out.println("Por favor preencha o nome do funcionário: ");
+        String nome = readTextFromUser();
+        System.out.println("Por favor preencha o salário do funcionário: ");
+        float salario = readDecimalNumberFromUser();
+        System.out.println("Por favor preencha o número de filhos menores que 14 anos: ");
+        int filhosElegiveisSalarioFamilia = readWholeNumberFromUser();
+
+        float salarioFamilia = calcularSalarioFamilia(salario, filhosElegiveisSalarioFamilia);
+        float descontoINSS = calcularDescontoINSS(salario);
+        float salarioBaseIr = calcularSalarioBaseIR(salario, descontoINSS);
+        float aliquotaIr = determinarAliquota(salarioBaseIr);
+        float descontoIR = calcularDescontoIR(salarioBaseIr, aliquotaIr);
+        float descontosSalario = calcularDescontosSalario(descontoINSS, descontoIR);
+        float remuneracao = calcularRemuneracao(salario, salarioFamilia);
+        float salarioLiquido = calcularSalarioLiquido(remuneracao, descontosSalario);
+
+
+        System.out.println(String.format("Salário Família %f \n Remuneração %f \n Desconto INSS %f \n " +
+                        "Salário Base IR %f \n Alíquota IR %f \n Desconto IR %f \n Descontos Salário %f \n Salário Líquido %f",
+                salarioFamilia, remuneracao, descontoINSS, salarioBaseIr, aliquotaIr, descontoIR, descontosSalario,
+                salarioLiquido));
 
 
     }
@@ -94,9 +117,9 @@ public class Funcao {
 
     static float calcularDescontoINSS(float salario) {
         final float valorDescontoMaximoFaixa1 = SALARIO_MINIMO * INSS_ALIQUOTA_FAIXA_1;
-        final float valorDescontoMaximoFaixa2 = INSS_MAX_FAIXA_2 * INSS_ALIQUOTA_FAIXA_2;
-        final float valorDescontoMaximoFaixa3 = INSS_MAX_FAIXA_3 * INSS_ALIQUOTA_FAIXA_3;
-        final float valorDescontoMaximoFaixa4 = INSS_MAX_FAIXA_4 * INSS_ALIQUOTA_FAIXA_4;
+        final float valorDescontoMaximoFaixa2 = (INSS_MAX_FAIXA_2 - SALARIO_MINIMO) * INSS_ALIQUOTA_FAIXA_2;
+        final float valorDescontoMaximoFaixa3 = (INSS_MAX_FAIXA_3 - INSS_MAX_FAIXA_2) * INSS_ALIQUOTA_FAIXA_3;
+        final float valorDescontoMaximoFaixa4 = (INSS_MAX_FAIXA_4 - INSS_MAX_FAIXA_3) * INSS_ALIQUOTA_FAIXA_4;
 
         if (salario <= SALARIO_MINIMO) {
             return valorDescontoMaximoFaixa1;
@@ -121,6 +144,18 @@ public class Funcao {
 
         }
         return 0;
+    }
+
+    static float calcularDescontosSalario(float descontoINSS, float descontoIR) {
+        return descontoINSS + descontoIR;
+    }
+
+    static float calcularRemuneracao(float salario, float salarioFamilia) {
+        return salario + salarioFamilia;
+    }
+
+    static float calcularSalarioLiquido(float remuneracao, float descontosSalario) {
+        return remuneracao - descontosSalario;
     }
 
 
