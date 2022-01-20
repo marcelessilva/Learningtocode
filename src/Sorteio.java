@@ -4,16 +4,31 @@ import java.util.Map;
 public class Sorteio {
 
     public static void main(String[] args) {
-        double random = Math.random();
+        /*double random = Math.random();
         double multiplica = random * 10;
         long round = Math.round(multiplica);
         if (round == 0 | round == 2 | round == 3 | round == 6 | round == 9) {
             System.out.println("Wiliam");
         } else {
             System.out.println("Marcele");
-        }
+        }*/
 
-        //sortearPortariaComMap();
+        System.out.println("-----DO WHILE------");
+        //do while
+        String resultado = "Gata Preta";
+        do {
+            resultado = sortearPortariaComMap();
+            System.out.println(resultado);
+        } while (!resultado.equals("Gata Preta"));
+
+
+        System.out.println("-----WHILE------");
+        String outroResultado = "Gata Preta";
+        //while
+        while(outroResultado.equals("Gata Preta")){
+            outroResultado = sortearPortariaComMap();
+            System.out.println(outroResultado);
+        }
 
     }
 
@@ -26,15 +41,15 @@ public class Sorteio {
         }
     }
 
-    static void sortearPortariaComMap() {
-        Map<Integer,String> pessoas = new HashMap<>();
-        pessoas.put(0,"Wiliam");
-        pessoas.put(1,"Marcele");
-        pessoas.put(2,"Manezao");
-        pessoas.put(3,"Gata Preta");
-        pessoas.put(4,"Amy");
+    static String sortearPortariaComMap() {
+        Map<Integer, String> pessoas = new HashMap<>();
+        pessoas.put(0, "Wiliam");
+        pessoas.put(1, "Marcele");
+        pessoas.put(2, "Manezao");
+        pessoas.put(3, "Gata Preta");
+        pessoas.put(4, "Amy");
 
         int numeroSorteado = (int) (Math.random() * 5);
-        System.out.println(pessoas.get(numeroSorteado));
+        return pessoas.get(numeroSorteado);
     }
 }
