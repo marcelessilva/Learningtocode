@@ -1,5 +1,3 @@
-import com.sun.org.apache.bcel.internal.generic.ARETURN;
-
 import static util.Util.*;
 
 public class Funcao {

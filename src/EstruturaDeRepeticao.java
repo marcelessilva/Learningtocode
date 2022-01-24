@@ -13,8 +13,8 @@ public class EstruturaDeRepeticao {
         /*int num = 1;
         while (num <= 10){
             System.out.println(num);
-            num = num + 1;*/
-        }
+            num = num + 1;
+        }*/
     }
 
     private static void simularArCondicionado() {
