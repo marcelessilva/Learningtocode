@@ -18,8 +18,8 @@ public class Investigador {
     */
 
     public static void main(String[] args) {
-        //Control + clique pra ver a dica
         dica();
+        //Control + clique pra ver a dica
 
         //Desenvolver a solução aqui na main
 

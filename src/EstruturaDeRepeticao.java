@@ -15,6 +15,41 @@ public class EstruturaDeRepeticao {
             System.out.println(num);
             num = num + 1;
         }*/
+
+       /* int x = 0;
+        System.out.println(x);
+        x= 5;
+        System.out.println(x);
+        x = x+1;
+        System.out.println(x);
+        x += 1;*/
+
+        int num = 1;
+       /* while (num < 11) {
+            System.out.println(num++);
+            //num = num +1;
+        }*/
+
+        num = 11;
+        /*while (num<10) {
+            if (num %2 ==0) {
+                System.out.println(num);
+            }
+            num = num+1;
+        }*/
+        num =1;
+        System.out.println("Digite um número");
+        int numDigitado = Util.readWholeNumberFromUser();
+
+        while (num <= numDigitado) {
+            if (num%2 ==0) {
+                System.out.println(num);
+            }
+            num = num+1;
+        }
+
+
+
     }
 
     private static void simularArCondicionado() {
