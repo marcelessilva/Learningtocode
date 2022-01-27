@@ -1,8 +1,11 @@
 package exercicios.facil;
 
+import util.Util;
+
 public class Exercicios1 {
 
     public static void main(String[] args) {
+        calcularLitrosGasolina();
 
     }
 
@@ -12,6 +15,15 @@ public class Exercicios1 {
         tanque.
      */
     static void calcularLitrosGasolina(){
+        System.out.println("Digite o preço do litro da gasolina: ");
+        String precoGasolinaTexto = Util.readTextFromUser();
+        precoGasolinaTexto = precoGasolinaTexto.replaceAll(",",".");
+        precoGasolinaTexto = precoGasolinaTexto.replaceAll("R\\$","");
+        precoGasolinaTexto = precoGasolinaTexto.trim();
+        float precoDaGasolina = Float.parseFloat(precoGasolinaTexto);
+        System.out.println("Digite quanto você irá abastecer: " );
+        float valorDoAbastecimento = Util.readDecimalNumberFromUser();
+        System.out.println("Nº de Litros abastecidos: " +valorDoAbastecimento/precoDaGasolina+ " L");
 
     }
 
