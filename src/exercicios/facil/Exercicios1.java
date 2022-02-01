@@ -5,7 +5,7 @@ import util.Util;
 public class Exercicios1 {
 
     public static void main(String[] args) {
-        calcularLitrosGasolina();
+        imprimirCracha();
 
     }
 
@@ -32,7 +32,14 @@ public class Exercicios1 {
     Faça um algoritmo para calcular quantos litros de água e de suco são necessários para se fazer X
     litros de refresco (informados pelo usuário).
      */
+
+
     static void calcularIngredientesSuco(){
+        System.out.println("Digite quantos litros de refresco você deseja fazer");
+        float litrosDeRefresco = Util.readWholeNumberFromUser();
+        float litrosDeAgua = 0.8f * litrosDeRefresco;
+        float litrosDeSuco = 0.2f * litrosDeRefresco;
+        System.out.println("Serão necessários " + litrosDeAgua + "litros de água " + litrosDeSuco + "Litros de suco");
 
     }
 
@@ -40,8 +47,14 @@ public class Exercicios1 {
     3 - Para doar sangue é necessário ter entre 18 e 67 anos.
     Faça um programa que pergunte a idade de uma pessoa e diga se ela pode doar sangue ou não.
      */
-    static void doarSangue(){
-
+    static void doarSangue() {
+        System.out.println("Digite sua idade");
+        int idade = Util.readWholeNumberFromUser();
+        if (idade >= 18 && idade <= 67) {
+            System.out.println("Você é elegível para doar sangue");
+        } else {
+            System.out.println(" Você não é elegível para doar sangue ");
+        }
 
     }
 
@@ -53,7 +66,14 @@ public class Exercicios1 {
     [2]
     [3]
      */
-    static void imprimirCracha(){
+    static void imprimirCracha() {
+        System.out.println("Digite o número de participantes");
+        int numParticipantes = Util.readWholeNumberFromUser();
+        int participante = 1;
+        while (participante <= numParticipantes) {
+            System.out.println("[" + participante + "]");
+            participante = participante + 1;
+        }
 
     }
 
