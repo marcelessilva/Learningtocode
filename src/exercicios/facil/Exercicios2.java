@@ -1,8 +1,11 @@
 package exercicios.facil;
 
+import util.Util;
+
 public class Exercicios2 {
 
     public static void main(String[] args) {
+        calcularMedidasCircunferencia();
 
     }
 
@@ -11,6 +14,16 @@ public class Exercicios2 {
       dessa pessoa expressa apenas em dias. Considerar ano com 365 dias e mês com 30 dias.
      */
     static void calcularIdadeEmDias(){
+        System.out.println("Escreva  quantos anos, meses e dias você tem de vida, inicialmente escreva os anos");
+        int anos = Util.readWholeNumberFromUser();
+        System.out.println(" Escreva os meses");
+        int meses = Util.readWholeNumberFromUser();
+        System.out.println("Escreva os dias");
+        int dias = Util.readWholeNumberFromUser();
+        int transfAnosEmDias = anos*365;
+        int transfMesesemDias = meses*30;
+        int diasDeVida = transfAnosEmDias+transfMesesemDias+dias;
+        System.out.println("Você tem "+ diasDeVida + " dias de vida");
 
     }
 
@@ -20,6 +33,16 @@ public class Exercicios2 {
      */
     static void calcularMedidasCircunferencia(){
         double numeroPi = Math.PI;
+        System.out.println("Escreva o raio da circunferência");
+        float raio = Util.readDecimalNumberFromUser();
+        float diametro = 2*raio;
+        double perimetro = 2*numeroPi*raio;
+        double area = numeroPi * (raio*raio);
+        System.out.println(String.format("Diâmetro %f \nPerímetro %f \nÁrea da Circunferência %f \n ", diametro,
+                perimetro, area ));
+
+
+
 
     }
 
