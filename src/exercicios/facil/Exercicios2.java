@@ -5,8 +5,7 @@ import util.Util;
 public class Exercicios2 {
 
     public static void main(String[] args) {
-        calcularMedidasCircunferencia();
-
+      calcularRendaPerCapita();
     }
 
     /*
@@ -50,23 +49,48 @@ public class Exercicios2 {
      3 - O álcool tem uma eficiência 30% menor do que a gasolina, baseado nisso faça um programa que leia os preços do litro
       do álcool e da gasolina e indique ao usuário qual melhor combustível para abastecer o carro.
      */
-    static void decidirEntreAlcoolGasolina(){
-
-
+    static void decidirEntreAlcoolGasolina() {
+        System.out.println("Digite o preço do litro da Gasolina");
+        float gasolina = Util.readDecimalNumberFromUser();
+        System.out.println("Digite o preço do litro do álcool");
+        float alcool =  Util.readDecimalNumberFromUser();
+        float eficiencia = alcool/gasolina;
+        if (eficiencia<0.7f) {
+            System.out.println("Álcool é mais vantajoso que gasolina");
+        }
+        else if (eficiencia>0.7f) {
+            System.out.println("Gasolina é mais vantajoso que álcool");
+        }
+        else {
+            System.out.println("Tanto álcool quanto gasolina estão caros");
+        }
     }
 
     /*
      4 - Faça um programa que leia um número inteiro do usuário e usando while imprima a sua tabuada.
      */
     static void calcularTabuada(){
-
+        System.out.println("Digite um número inteiro de 1 a 9");
+        int numInt = Util.readWholeNumberFromUser();
+        int numBase = 1;
+        while (numBase<=10) {
+            System.out.println(numInt*numBase);
+            numBase = numBase+1;
+        }
     }
 
     /*
      5 - Usando while faça um programa que leia a renda de todos os integrantes de uma familia,
       calcule e imprima a renda familiar per capita.
     */
-    static void calcularRendaPerCapita(){
+    static void calcularRendaPerCapita() {
+        System.out.println("Digite a renda individual de cada integrante de sua família. Ao terminar digite 0");
+        float rendaIndividual = Util.readDecimalNumberFromUser();
+        boolean x = true;
+        while (rendaIndividual != x) {
+            System.out.println("Digite a renda do próximo integrante");
+            float rendaIndividual2 = Util.readDecimalNumberFromUser();
+        }
 
     }
 
