@@ -16,6 +16,28 @@ public class TamanhoCasa {
 
         //Desenvolver a solução aqui na main
 
+
+        boolean sair = false;
+        float areaTotal = 0;
+        while (!sair) {
+
+            System.out.println("Digite o nome do cômodo. Quando acabar digite sair");
+            String nomeComodo = Util.readTextFromUser();
+            if (nomeComodo.equalsIgnoreCase("sair")) {
+                sair = true;
+            } else {
+                System.out.println("Digite a largura do cômodo");
+                float largura = Util.readDecimalNumberFromUser();
+                System.out.println("Digite o comprimento do cômodo");
+                float comprimento = Util.readDecimalNumberFromUser();
+                float areaComodo = largura * comprimento;
+                System.out.println( "Area de " + nomeComodo + " "  + areaComodo + " m²");
+                areaTotal = areaComodo + areaTotal;
+                System.out.println(" Área total é " + areaTotal);
+            }
+        }
+
+
     }
 
     /**

@@ -1,5 +1,7 @@
 package exercicios.intermediario;
 
+import util.Util;
+
 public class Investigador {
     /*
     Faça um programa que faça 5 perguntas para uma pessoa sobre um crime.
@@ -22,6 +24,50 @@ public class Investigador {
         //Control + clique pra ver a dica
 
         //Desenvolver a solução aqui na main
+
+
+        int somaDosSim = 0;
+
+        System.out.println("Telefonou para a vítima? Digite Sim ou Não");
+        String resposta1 = Util.readTextFromUser();
+        if (resposta1.equals("Sim")) {
+            somaDosSim = somaDosSim + 1;
+        }
+
+        System.out.println("Esteve no local do crime? Digite Sim ou Não");
+        String resposta2 = Util.readTextFromUser();
+        if (resposta2.equals("Sim")) {
+            somaDosSim = somaDosSim + 1;
+        }
+
+        System.out.println("Mora perto da vítima? Digite Sim ou Não");
+        String resposta3 = Util.readTextFromUser();
+        if (resposta3.equals("Sim")) {
+            somaDosSim = somaDosSim + 1;
+        }
+
+        System.out.println("Devia para a vítima? Digite Sim ou Não");
+        String resposta4 = Util.readTextFromUser();
+        if (resposta4.equals("Sim")) {
+            somaDosSim = somaDosSim + 1;
+        }
+
+        System.out.println("Já trabalhou com a vítima? Digite Sim ou Não");
+        String resposta5 = Util.readTextFromUser();
+        if (resposta5.equals("Sim")) {
+            somaDosSim = somaDosSim + 1;
+        }
+
+
+        if (somaDosSim == 2) {
+            System.out.println("Suspeita");
+        } else if (somaDosSim > 2 && somaDosSim < 5) {
+            System.out.println("Cúmplice");
+        } else if (somaDosSim == 5) {
+            System.out.println("Assassino");
+        } else {
+            System.out.println("Inocente");
+        }
 
     }
 

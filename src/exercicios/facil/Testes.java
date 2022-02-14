@@ -4,7 +4,22 @@ import util.Util;
 
 public class Testes {
     public static void main(String[] args) {
-        // o usuário irá informar dois números e o algoritmo irá definir o maior número.
+
+        boolean sair = false;
+
+        while (!sair){
+            System.out.println("digita o numero, zero pra sair");
+            int num = Util.readWholeNumberFromUser();
+
+            if(num == 0){
+                sair = true;
+            } else {
+                System.out.println(num * 5);
+            }
+        }
+
+
+        /*  // o usuário irá informar dois números e o algoritmo irá definir o maior número.
 
         System.out.println("Digite um número inteiro: ");
         int x = Util.readWholeNumberFromUser();
@@ -16,6 +31,6 @@ public class Testes {
         }
         if (y > x) {
             System.out.println(" Número " + y + " é maior que número " + x);
-        }
+        }*/
     }
 }
