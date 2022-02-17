@@ -15,8 +15,46 @@ public class TamanhoCasa {
         dica();
 
         //Desenvolver a solução aqui na main
+        int limite = 2;
+        boolean sair = false;
+        String[] nomeComodo = new String[limite];
+        float[] areaComodo = new float[limite];
+        int indice = 0;
+        float areaTotal = 0;
+
+        while (!sair) {
+
+            System.out.println("Digite o nome do cômodo. Quando acabar digite sair");
+
+            String nomeComodoInformado = Util.readTextFromUser();
+
+            if (nomeComodoInformado.equalsIgnoreCase("sair") || indice >= limite) {
+                sair = true;
+            } else {
+                System.out.println("Digite a largura do cômodo");
+                float largura = Util.readDecimalNumberFromUser();
+                System.out.println("Digite o comprimento do cômodo");
+                float comprimento = Util.readDecimalNumberFromUser();
+                nomeComodo[indice] = nomeComodoInformado;
+                areaComodo[indice] = largura * comprimento;
+                areaTotal = areaComodo[indice] + areaTotal;
+                indice++;
+            }
+        }
+
+        for (int i = 0; i < indice; i++) {
+            System.out.println(nomeComodo[i] + " " + areaComodo[i] + "m²");
+        }
+
+        System.out.println(" Área total" + areaTotal + "m²");
 
 
+        //CalcularAAreaDeCadaComodoEAreaTotal();
+
+
+    }
+
+    private static void CalcularAAreaDeCadaComodoEAreaTotal() {
         boolean sair = false;
         float areaTotal = 0;
         while (!sair) {
@@ -31,13 +69,11 @@ public class TamanhoCasa {
                 System.out.println("Digite o comprimento do cômodo");
                 float comprimento = Util.readDecimalNumberFromUser();
                 float areaComodo = largura * comprimento;
-                System.out.println( "Area de " + nomeComodo + " "  + areaComodo + " m²");
+                System.out.println("Area de " + nomeComodo + " " + areaComodo + " m²");
                 areaTotal = areaComodo + areaTotal;
                 System.out.println(" Área total é " + areaTotal);
             }
         }
-
-
     }
 
     /**

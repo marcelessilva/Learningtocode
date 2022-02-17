@@ -24,5 +24,8 @@ public class Operadores {
         int y = 2;
         System.out.println(++y);
         System.out.println(y);
+
+        //While é usado quando não tem número de instruções definidas;
+        //For é usado quando tem um número definido de instruções;
     }
 }
