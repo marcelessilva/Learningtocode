@@ -1,11 +1,19 @@
 package exercicios.facil;
 
+import com.sun.xml.internal.ws.api.model.WSDLOperationMapping;
 import util.Util;
 
 public class Testes {
     public static void main(String[] args) {
 
-        String[] nomesBebe = new String[10];
+        //soma, acumular valor numa variável
+        int soma = 0;
+        for (int i = 1; i < 5; i++) {
+            soma = soma + i;
+        }
+        System.out.println("Soma = "+ soma);
+
+      /*  String[] nomesBebe = new String[10];
 
         boolean sair = false;
         int indice = 0;
@@ -19,7 +27,7 @@ public class Testes {
                 indice++;
             }
         }
-
+*/
 
         /*boolean sair = false;
 
