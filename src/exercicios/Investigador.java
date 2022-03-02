@@ -1,4 +1,4 @@
-package exercicios.intermediario;
+package exercicios;
 
 import util.Util;
 

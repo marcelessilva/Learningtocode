@@ -1,4 +1,4 @@
-package exercicios.facil;
+package exercicios;
 
 import com.sun.xml.internal.ws.api.model.WSDLOperationMapping;
 import util.Util;
