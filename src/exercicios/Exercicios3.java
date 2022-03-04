@@ -11,9 +11,35 @@ public class Exercicios3 {
     public static final float desconto3 = 0.1f;
 
     public static void main(String[] args) {
+
+       /* int num = 1;
+
+
+        while (num <11) {
+            System.out.println(num++);
+        }*/
+
+        /*boolean continuar = true;
+        int contador = 0;
+        int num = Util.readWholeNumberFromUser();
+
+        while (continuar) {
+            System.out.println("Banana");
+            contador++;
+
+            if (num == 5) {
+                continuar = false;
+            }
+            if (contador == 3) {
+                continuar = false;
+            }
+        }*/
+
+
         //avaliarCarro2();
         //imprimirNumerosComWhile();
-        imprimirNumerosComFor();
+        //imprimirNumerosComFor();
+        jogarAdivinhação();
 
 
     }
@@ -119,9 +145,9 @@ public class Exercicios3 {
      */
     static void imprimirNumerosComWhile() {
         int num = 1;
-        while (num<11) {
+        while (num < 11) {
             System.out.println(num);
-            num = num +1;
+            num = num + 1;
         }
 
     }
@@ -136,6 +162,27 @@ public class Exercicios3 {
     static void jogarAdivinhação() {
         int numeroSorteado = (int) (Math.random() * 10);
 
+        int num = 3;
+        int numUsuario = 0;
+        boolean continuar = true;
+
+        while (continuar) {
+            System.out.println(" Digite um número de 0 a 10:");
+            numUsuario = Util.readWholeNumberFromUser();
+
+            if (numUsuario == numeroSorteado) {
+                System.out.println("Vencedor");
+                continuar = false;
+            }
+
+            num = num - 1;
+
+            if (num == 0) {
+                System.out.println("Perdedor");
+                continuar = false;
+            }
+        }
+
 
     }
 
@@ -144,7 +191,7 @@ public class Exercicios3 {
      */
     static void imprimirNumerosComFor() {
 
-        for (int i =1; i<11; i++) {
+        for (int i = 1; i < 11; i++) {
             System.out.println(i);
         }
 
@@ -155,7 +202,7 @@ public class Exercicios3 {
      * use outro for para imprimir esse mesmo array na ordem inversa
      */
     static void inverterArray() {
-        int num[ ] = new int[5];
+        int num[] = new int[5];
 
 
     }

@@ -5,13 +5,30 @@ import util.Util;
 
 public class Testes {
     public static void main(String[] args) {
+        boolean continuar = true;
+        int contador = 1;
 
+        while (continuar){
+            System.out.println("digita o numero, zero pra sair");
+            int num = Util.readWholeNumberFromUser();
+
+            if(num == 0){
+                continuar = false;
+            } else {
+                System.out.println(num * 5);
+            }
+
+            contador++;
+            if(contador > 10){
+                continuar = false;
+            }
+        }
         //soma, acumular valor numa variável
-        int soma = 0;
+      /*  int soma = 0;
         for (int i = 1; i < 5; i++) {
             soma = soma + i;
         }
-        System.out.println("Soma = "+ soma);
+        System.out.println("Soma = "+ soma);*/
 
       /*  String[] nomesBebe = new String[10];
 
@@ -29,14 +46,14 @@ public class Testes {
         }
 */
 
-        /*boolean sair = false;
+        /*boolean continuar = true;
 
-        while (!sair){
+        while (continuar){
             System.out.println("digita o numero, zero pra sair");
             int num = Util.readWholeNumberFromUser();
 
             if(num == 0){
-                sair = true;
+                continuar = false;
             } else {
                 System.out.println(num * 5);
             }
