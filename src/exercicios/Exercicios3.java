@@ -39,7 +39,8 @@ public class Exercicios3 {
         //avaliarCarro2();
         //imprimirNumerosComWhile();
         //imprimirNumerosComFor();
-        jogarAdivinhação();
+        //jogarAdivinhação();
+        inverterArray();
 
 
     }
@@ -204,6 +205,13 @@ public class Exercicios3 {
     static void inverterArray() {
         int num[] = new int[5];
 
+        for (int i = 0; i < num.length; i++ ) {
+            num[i] = Util.readWholeNumberFromUser();
+        }
+
+        for (int i = 4; i >= 0; i--) {
+            System.out.println(num [i]);
+        }
 
     }
 }

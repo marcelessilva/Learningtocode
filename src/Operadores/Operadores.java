@@ -27,5 +27,8 @@ public class Operadores {
 
         //While é usado quando não tem número de instruções definidas;
         //For é usado quando tem um número definido de instruções;
+        //for > faça a instrução para n numero de vezes
+        // for ( i = 0 (primeira posição do array); i condição (<= ou >=) ultima posição do array; i ++ ou -- (ou outra instrução)
+        // OBS: o primeiro i deve ser "rodado" na segundo i e deve ser verdadeira a condição
     }
 }
