@@ -4,7 +4,7 @@ import util.Util;
 
 public class Exercícios2DeNovo {
     public static void main(String[] args) {
-        calcularTabuada();
+        calcularRendaPerCapita();
 
     }
 
@@ -20,11 +20,11 @@ public class Exercícios2DeNovo {
         System.out.println("Dias");
         int dias = Util.readWholeNumberFromUser();
 
-        int anosEmDias = anos*365;
-        int mesesEmdias = meses*30;
+        int anosEmDias = anos * 365;
+        int mesesEmdias = meses * 30;
         int soma = anosEmDias + mesesEmdias + dias;
 
-        System.out.println("Você tem " + soma + " dias de vida" );
+        System.out.println("Você tem " + soma + " dias de vida");
 
 
     }
@@ -39,11 +39,9 @@ public class Exercícios2DeNovo {
         float raio = Util.readDecimalNumberFromUser();
         float diametro = 2 * raio;
         double pi = Math.PI;
-        double perimetro = 2*pi*raio;
+        double perimetro = 2 * pi * raio;
         double area = pi * (raio * raio);
-        System.out.println( "As medidas da cincunferência são " + diametro + " de diâmetro" + perimetro + " de perímetro" + area + " de área");
-
-
+        System.out.println("As medidas da cincunferência são " + diametro + " de diâmetro" + perimetro + " de perímetro" + area + " de área");
 
 
     }
@@ -55,16 +53,16 @@ public class Exercícios2DeNovo {
     static void decidirEntreAlcoolGasolina() {
         System.out.println("Preço do litro do álcool");
         float alcool = Util.readDecimalNumberFromUser();
-        System.out.println( "Preço da gasolina");
+        System.out.println("Preço da gasolina");
         float gasolina = Util.readDecimalNumberFromUser();
         float eficiencia = alcool / gasolina;
 
         if (eficiencia < 0.7) {
             System.out.println(" Álcool é mais vantajoso que gasolina ");
-        } else if (eficiencia > 0.7 ) {
+        } else if (eficiencia > 0.7) {
             System.out.println(" Gasolina é mais vaontajoso que álcool");
         } else {
-            System.out.println ("Você está enrolado, meu filho");
+            System.out.println("Você está enrolado, meu filho");
         }
 
     }
@@ -77,7 +75,7 @@ public class Exercícios2DeNovo {
         int num = Util.readWholeNumberFromUser();
         int x = 1;
         while (x <= 10) {
-            System.out.println( num * x);
+            System.out.println(num * x);
             x++;
         }
 
@@ -89,12 +87,24 @@ public class Exercícios2DeNovo {
     */
     static void calcularRendaPerCapita() {
 
-        float rendaIndididual = 0;
-        int nDeRendas = 0;
-        float totalDeRendas = 0;
+        float rendaIndividual = 0;
+        float somaDasRendas = 0;
+        float numRendas = 0;
+        boolean continuar = true;
 
+        while (continuar) {
+            System.out.println("Digite a renda de um integrante da família e assim sucessivamente, quando terminar digite 0");
+            rendaIndividual = Util.readDecimalNumberFromUser();
+            if (rendaIndividual == 0) {
+                continuar = false;
+            } else {
+                somaDasRendas = somaDasRendas + rendaIndividual;
+                numRendas = numRendas + 1;
+            }
+        }
 
-
+        float rendaPerCapta = somaDasRendas/numRendas;
+        System.out.println( rendaPerCapta);
 
 
     }

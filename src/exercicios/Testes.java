@@ -73,5 +73,28 @@ public class Testes {
         if (y > x) {
             System.out.println(" Número " + y + " é maior que número " + x);
         }*/
+
+        /* int num = 1;
+
+
+        while (num <11) {
+            System.out.println(num++);
+        }*/
+
+        /*boolean continuar = true;
+        int contador = 0;
+        int num = Util.readWholeNumberFromUser();
+
+        while (continuar) {
+            System.out.println("Banana");
+            contador++;
+
+            if (num == 5) {
+                continuar = false;
+            }
+            if (contador == 3) {
+                continuar = false;
+            }
+        }*/
     }
 }
