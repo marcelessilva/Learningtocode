@@ -163,14 +163,17 @@ public class Exercicios3DeNovo {
      */
     static void inverterArray() {
         int num[] = new int[5];
+        num[0] = 1;
+
 
         for (int i = 0; i < num.length; i++) {
             System.out.println("Digite 5 números");
             int numDoUsuario = Util.readWholeNumberFromUser();
+            num[i] = numDoUsuario;
         }
 
-        for (int  = 4; i >= 0; i--) {
-            System.out.println(i);
+        for (int i = 4; i >= 0; i--) {
+            System.out.println(num [i]);
         }
 
     }
